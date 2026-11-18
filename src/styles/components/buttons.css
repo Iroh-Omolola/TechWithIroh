@@ -1,0 +1,50 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: transform .15s, background .2s, border-color .2s;
+}
+.btn:hover { transform: translateY(-1px); }
+
+.btn--accent { background: var(--accent); color: var(--ink); }
+.btn--accent:hover { background: var(--accent-hover); }
+.btn--light { background: var(--cream); color: var(--ink); }
+.btn--dark { background: var(--ink); color: var(--cream); }
+.btn--outline { border: 1px solid var(--line-2); color: var(--text); }
+.btn--outline:hover { border-color: var(--muted-2); }
+
+.btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* Play triangle (CSS-only) */
+.play-icon {
+  width: 0; height: 0;
+  border-left: 8px solid currentColor;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.circle-btn {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--line-2);
+  display: grid;
+  place-items: center;
+  padding-left: 2px;
+  transition: background .2s, color .2s;
+}
+.circle-btn .play-icon { border-left-width: 6px; border-top-width: 4px; border-bottom-width: 4px; }
+
+.arrow-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; margin-top: 32px; }
+.arrow-link::after { content: "→"; color: var(--accent); transition: transform .2s; }
+.arrow-link:hover::after { transform: translateX(3px); }
+.arrow-link--flush { margin-top: 0; }
+
+@media (max-width: 420px) {
+  .btn-row .btn { flex: 1 1 100%; }
+}

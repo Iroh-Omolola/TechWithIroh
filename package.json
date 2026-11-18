@@ -1,0 +1,17 @@
+{
+  "name": "tech-with-iroh",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Landing page for Tech with Iroh — tech, unfiltered.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "vite": "^6.0.0"
+  }
+}

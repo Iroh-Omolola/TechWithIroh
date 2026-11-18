@@ -1,0 +1,28 @@
+.hero { padding: clamp(48px, 9vw, 80px) 0 clamp(56px, 9vw, 88px); }
+.hero__grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 56px; align-items: center; }
+.hero h1 { font-size: clamp(64px, 11vw, 96px); font-weight: 800; letter-spacing: -.065em; line-height: .92; margin: 24px 0 26px; }
+.hero h1 em { font-style: normal; color: var(--accent); display: block; }
+
+.hero__tagline { display: flex; align-items: center; gap: 14px; font-size: clamp(18px, 2.4vw, 22px); font-weight: 500; letter-spacing: -.03em; margin-bottom: 18px; }
+.hero__tagline::before { content: ""; width: 30px; height: 2px; background: var(--accent); flex-shrink: 0; }
+.hero__lead { color: var(--muted); font-size: 15.5px; max-width: 400px; margin-bottom: 28px; }
+
+.hero__platforms { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 26px; font-size: 12px; color: var(--muted); }
+.hero__platforms a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; font-weight: 500; }
+
+/* Player card */
+.player { background: var(--card); border: 1px solid var(--line-2); border-radius: var(--radius); padding: 10px 10px 22px; }
+.player__cover { aspect-ratio: 4 / 3.1; background: #1c1c20; border-radius: 14px; display: grid; place-items: center; color: var(--muted-2); font-size: 12px; }
+.player__body { padding: 18px 6px 0; }
+.player__body h2 { font-size: 17px; font-weight: 700; letter-spacing: -.03em; line-height: 1.25; margin: 8px 0 16px; }
+.player__controls { display: flex; align-items: center; gap: 22px; }
+.player__play { width: 36px; height: 36px; border-radius: 50%; background: var(--cream); color: var(--ink); display: grid; place-items: center; flex-shrink: 0; padding-left: 2px; }
+
+.wave { display: flex; align-items: center; gap: 3px; height: 20px; flex: 1; overflow: hidden; }
+.wave i { width: 2px; border-radius: 2px; background: #3a3a40; flex-shrink: 0; }
+.wave i.is-on { background: var(--accent); }
+
+@media (max-width: 960px) {
+  .hero__grid { grid-template-columns: 1fr; gap: 40px; }
+  .player { max-width: 460px; }
+}

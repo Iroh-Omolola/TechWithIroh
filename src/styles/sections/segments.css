@@ -1,0 +1,13 @@
+.segments .h2 { margin-top: 12px; }
+.seg-list { margin-top: 32px; border-top: 1px solid var(--line); }
+.seg { display: grid; grid-template-columns: 72px 1fr 1fr; gap: 16px; padding: 34px 0; border-bottom: 1px solid var(--line); align-items: start; }
+.seg > span { font-family: var(--mono); font-size: 10.5px; color: var(--accent); padding-top: 14px; }
+.seg h3 { font-size: clamp(26px, 3.6vw, 32px); font-weight: 600; letter-spacing: -.05em; line-height: 1.1; }
+.seg p { font-size: 12.5px; color: var(--muted); padding-top: 10px; }
+.seg p a { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
+
+@media (max-width: 720px) {
+  .seg { grid-template-columns: 1fr; gap: 6px; padding: 26px 0; }
+  .seg > span { padding-top: 0; }
+  .seg p { padding-top: 4px; }
+}

@@ -1,0 +1,39 @@
+/* Design tokens
+ * Breakpoints (media queries can't read custom properties):
+ *   lg ≤ 960px · md ≤ 720px · sm ≤ 420px
+ */
+:root {
+  /* Colour */
+  --bg: #08080a;
+  --bg-2: #0b0c0f;
+  --card: #121215;
+  --card-2: #101013;
+  --line: #1f1f24;
+  --line-2: #2a2a30;
+  --line-light: #dcd9d2;
+  --cream: #f3f1ec;
+  --ink: #0a0a0b;
+  --text: #f3f1ec;
+  --text-soft: #c9c9cf;
+  --text-on-cream: #4a4a50;
+  --text-on-cream-2: #6a6a70;
+  --muted: #8b8b93;
+  --muted-2: #5f5f67;
+  --accent: #f05252;
+  --accent-hover: #f46767;
+  --accent-dark: #c93a3a;
+
+  /* Shape */
+  --radius: 20px;
+  --radius-sm: 16px;
+  --radius-pill: 999px;
+
+  /* Type */
+  --sans: "Inter", system-ui, -apple-system, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Layout */
+  --gutter: clamp(16px, 5.5vw, 56px);
+  --container: 1120px;
+  --nav-height: 64px;
+}

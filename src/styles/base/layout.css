@@ -1,0 +1,18 @@
+.container { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
+.section { padding: clamp(72px, 10vw, 110px) 0; }
+.section--bordered { border-top: 1px solid var(--line); }
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.section-head .label { display: block; margin-bottom: 12px; }
+.section-head--spaced { margin-bottom: 40px; }
+
+@media (max-width: 720px) {
+  .section-head:not(.section-head--spaced) { margin-bottom: 24px; }
+}

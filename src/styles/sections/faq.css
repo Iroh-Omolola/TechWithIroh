@@ -1,0 +1,17 @@
+.faq__grid { display: grid; grid-template-columns: 1fr 2.3fr; gap: 48px; }
+.faq__grid .h2 { margin-top: 12px; }
+.faq__list { border-top: 1px solid var(--line); }
+.faq__item { border-bottom: 1px solid var(--line); }
+
+.faq__q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 0; text-align: left; font-size: 15px; font-weight: 600; letter-spacing: -.02em; }
+.faq__q i { font-style: normal; color: var(--accent); font-size: 18px; font-weight: 400; transition: transform .25s; flex-shrink: 0; }
+.faq__q[aria-expanded="true"] i { transform: rotate(45deg); }
+
+.faq__a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+.faq__a > div { overflow: hidden; }
+.faq__a p { color: var(--muted); font-size: 13.5px; padding-bottom: 18px; max-width: 560px; }
+.faq__q[aria-expanded="true"] + .faq__a { grid-template-rows: 1fr; }
+
+@media (max-width: 960px) {
+  .faq__grid { grid-template-columns: 1fr; gap: 28px; }
+}
