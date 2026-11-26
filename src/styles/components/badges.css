@@ -24,3 +24,5 @@
   white-space: nowrap;
 }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.badge--link { transition: border-color .2s, color .2s; }
+.badge--link:hover { border-color: var(--accent); color: var(--text); }

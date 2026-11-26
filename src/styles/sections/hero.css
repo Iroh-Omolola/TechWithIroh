@@ -1,28 +1,75 @@
-.hero { padding: clamp(48px, 9vw, 80px) 0 clamp(56px, 9vw, 88px); }
-.hero__grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 56px; align-items: center; }
-.hero h1 { font-size: clamp(64px, 11vw, 96px); font-weight: 800; letter-spacing: -.065em; line-height: .92; margin: 24px 0 26px; }
+.hero { padding: clamp(40px, 8vw, 72px) 0 clamp(56px, 9vw, 88px); }
+.hero__grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+.hero h1 { font-size: clamp(60px, 10vw, 92px); font-weight: 800; letter-spacing: -.065em; line-height: .92; margin: 24px 0 28px; }
 .hero h1 em { font-style: normal; color: var(--accent); display: block; }
 
-.hero__tagline { display: flex; align-items: center; gap: 14px; font-size: clamp(18px, 2.4vw, 22px); font-weight: 500; letter-spacing: -.03em; margin-bottom: 18px; }
-.hero__tagline::before { content: ""; width: 30px; height: 2px; background: var(--accent); flex-shrink: 0; }
-.hero__lead { color: var(--muted); font-size: 15.5px; max-width: 400px; margin-bottom: 28px; }
+/* Host intro: Iroh is the brand, so she's introduced before anything else. */
+.host-chip { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+.host-chip p { display: grid; gap: 2px; font-size: 14px; color: var(--muted); max-width: 380px; }
+.host-chip b { color: var(--text); font-size: 16px; letter-spacing: -.02em; }
 
-.hero__platforms { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 26px; font-size: 12px; color: var(--muted); }
+/* Avatar: shows initials until a photo is added at public/images/iroh.jpg. */
+.avatar {
+  position: relative;
+  flex-shrink: 0;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--card);
+  border: 2px solid var(--accent);
+  font-family: var(--mono);
+  font-weight: 500;
+  color: var(--muted);
+}
+.avatar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/images/iroh.jpg") center 20% / cover no-repeat;
+}
+
+.hero__proof { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-bottom: 30px; padding: 16px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.hero__proof li { display: grid; font-size: 13px; color: var(--muted); }
+.hero__proof b { font-size: 26px; font-weight: 700; letter-spacing: -.04em; color: var(--text); line-height: 1.2; }
+
+.hero__platforms { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 24px; font-size: 13px; color: var(--muted); }
 .hero__platforms a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; font-weight: 500; }
+.hero__platforms a:hover { color: var(--accent); }
 
-/* Player card */
-.player { background: var(--card); border: 1px solid var(--line-2); border-radius: var(--radius); padding: 10px 10px 22px; }
-.player__cover { aspect-ratio: 4 / 3.1; background: #1c1c20; border-radius: 14px; display: grid; place-items: center; color: var(--muted-2); font-size: 12px; }
-.player__body { padding: 18px 6px 0; }
-.player__body h2 { font-size: 17px; font-weight: 700; letter-spacing: -.03em; line-height: 1.25; margin: 8px 0 16px; }
-.player__controls { display: flex; align-items: center; gap: 22px; }
-.player__play { width: 36px; height: 36px; border-radius: 50%; background: var(--cream); color: var(--ink); display: grid; place-items: center; flex-shrink: 0; padding-left: 2px; }
-
-.wave { display: flex; align-items: center; gap: 3px; height: 20px; flex: 1; overflow: hidden; }
-.wave i { width: 2px; border-radius: 2px; background: #3a3a40; flex-shrink: 0; }
-.wave i.is-on { background: var(--accent); }
+/* Latest episode card */
+.latest { background: var(--card); border: 1px solid var(--line-2); border-radius: var(--radius); padding: 10px; }
+.latest__media { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: #1c1c20; }
+.latest__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.latest__media:hover img { transform: scale(1.03); }
+.latest__play {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 64px; height: 64px;
+  margin: -32px 0 0 -32px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  padding-left: 4px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .45);
+  transition: transform .2s;
+}
+.latest__play .play-icon { border-left-width: 14px; border-top-width: 8px; border-bottom-width: 8px; }
+.latest__media:hover .latest__play { transform: scale(1.08); }
+.latest__body { padding: 18px 10px 12px; }
+.latest__body h2 { font-size: clamp(20px, 2.4vw, 24px); font-weight: 700; letter-spacing: -.035em; line-height: 1.2; margin: 8px 0 8px; }
+.latest__body p { font-size: 14px; color: var(--muted); margin-bottom: 18px; }
+.latest__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.latest__actions .btn { padding: 10px 18px; font-size: 13px; }
 
 @media (max-width: 960px) {
   .hero__grid { grid-template-columns: 1fr; gap: 40px; }
-  .player { max-width: 460px; }
+  .latest { max-width: 620px; }
+}
+@media (max-width: 420px) {
+  .hero__proof { gap: 10px 20px; }
+  .hero__proof b { font-size: 22px; }
 }

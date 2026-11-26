@@ -1,92 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- @include head -->
   <title>Tech with Iroh — Tech, unfiltered.</title>
-  <meta name="description" content="Candid conversations with the people building, hiring and leading in tech. Hosted by Iroh Nkechi Omolola." />
-  <meta name="theme-color" content="#08080a" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
+  <meta name="description" content="Candid conversations with the people building, hiring and leading in tech. Hosted by Iroh Nkechi Omolola. Watch on YouTube and TikTok, listen on Spotify and Apple Podcasts." />
   <meta property="og:title" content="Tech with Iroh — Tech, unfiltered." />
   <meta property="og:description" content="Candid conversations with the people building, hiring and leading in tech." />
-
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
-  <script type="module" src="/src/scripts/main.js"></script>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
-
-  <!-- NAV -->
-  <header class="nav" data-nav>
-    <div class="container nav__inner">
-      <a href="#" class="logo" aria-label="Tech with Iroh home">
-        <img src="/logo.svg" alt="" width="22" height="28" />
-        Tech with Iroh
-      </a>
-      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav__links" id="nav-links" aria-label="Primary" data-nav-links>
-        <a href="#episodes">Episodes</a>
-        <a href="#live">Live Show</a>
-        <a href="#ctrl">CTRL + BUILD</a>
-        <a href="#segments">Segments</a>
-        <a href="#host">Host</a>
-        <a href="#sponsors">Sponsors</a>
-        <a href="#faq">FAQ</a>
-        <a href="#live" class="btn btn--light">Get tickets</a>
-      </nav>
-    </div>
-  </header>
+  <!-- @include nav -->
 
   <main id="main">
-    <!-- HERO -->
+    <!-- HERO: the host and the latest episode, front and centre -->
     <section class="hero">
       <div class="container hero__grid">
-        <div>
-          <span class="badge"><span class="badge__dot"></span>Live in Lagos · 24.04.2027</span>
+        <div class="hero__intro">
+          <a href="/live" class="badge badge--link"><span class="badge__dot"></span>Live in Lagos · 24.04.2027 →</a>
           <h1>Tech,<em>unfiltered.</em></h1>
-          <p class="hero__tagline">Real people. Real stories. One episode at a time.</p>
-          <p class="hero__lead">Candid conversations with the people building, hiring and leading in tech. Hosted by Iroh Nkechi Omolola.</p>
+
+          <div class="host-chip">
+            <span class="avatar" aria-hidden="true">IO</span>
+            <p>
+              <b>Hosted by Iroh Nkechi Omolola</b>
+              <span>Frontend engineer and mentor. Real people, real stories, one episode at a time.</span>
+            </p>
+          </div>
+
+          <ul class="hero__proof" aria-label="Iroh's track record">
+            <li><b>500+</b>people mentored</li>
+            <li><b>70+</b>connected to job offers</li>
+            <li><b>{{episodeCount}}</b>episodes since 2023</li>
+          </ul>
+
           <div class="btn-row">
             <a href="#episodes" class="btn btn--accent"><span class="play-icon"></span>Start listening</a>
-            <a href="#live" class="btn btn--outline">Explore the live show</a>
+            <a href="https://www.tiktok.com/@techwithiroh" class="btn btn--outline" target="_blank" rel="noopener">Follow on TikTok</a>
           </div>
-          <div class="hero__platforms">Available on <a href="#">YouTube</a><a href="#">Spotify</a><a href="#">Apple Podcasts</a></div>
+          <div class="hero__platforms">
+            Also on
+            <a href="https://www.youtube.com/@techwithiroh" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.instagram.com/techwithiroh/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://creators.spotify.com/pod/profile/tech-with-iroh/" target="_blank" rel="noopener">Spotify</a>
+            <a href="https://podcasts.apple.com/us/podcast/tech-with-iroh/id1701067007" target="_blank" rel="noopener">Apple Podcasts</a>
+          </div>
         </div>
 
-        <article class="player">
-          <div class="player__cover">[Episode cover / host photo]</div>
-          <div class="player__body">
-            <span class="label">Latest episode</span>
-            <h2>The Cost of Staying Relevant in the Tech Space</h2>
-            <div class="player__controls">
-              <button class="player__play" type="button" aria-label="Play latest episode"><span class="play-icon"></span></button>
-              <div class="wave" aria-hidden="true" data-waveform></div>
-            </div>
-          </div>
-        </article>
+        <!-- @latest -->
       </div>
     </section>
 
-    <!-- STATS -->
-    <section class="stats" aria-label="Highlights">
-      <dl class="container stats__grid">
-        <div class="stat"><dt>People mentored by Iroh</dt><dd>500+</dd></div>
-        <div class="stat"><dt>Connected to job offers</dt><dd>70+</dd></div>
-        <div class="stat"><dt>Episodes published</dt><dd>[00]</dd></div>
-        <div class="stat"><dt>Listens and views</dt><dd>[00K]</dd></div>
-      </dl>
-    </section>
-
     <!-- EPISODES -->
-    <section class="section" id="episodes">
+    <section class="section section--bordered" id="episodes">
       <div class="container">
         <div class="section-head">
           <div>
@@ -95,139 +59,54 @@
           </div>
           <div class="filters" role="group" aria-label="Filter episodes">
             <button class="filter" type="button" aria-pressed="true" data-filter="all">All</button>
-            <button class="filter" type="button" aria-pressed="false" data-filter="career">Career Conversations</button>
+            <button class="filter" type="button" aria-pressed="false" data-filter="video">Watch</button>
+            <button class="filter" type="button" aria-pressed="false" data-filter="audio">Listen</button>
             <button class="filter" type="button" aria-pressed="false" data-filter="courtroom">Tech Courtroom</button>
-            <button class="filter" type="button" aria-pressed="false" data-filter="guest">Guest Stories</button>
           </div>
         </div>
 
-        <ul class="ep-list">
-          <li class="ep" data-category="career">
-            <span class="ep__num">EP [00]</span>
-            <div class="ep__body"><div><h3>The Cost of Staying Relevant in the Tech Space</h3><p>What it really takes to keep up, and how to grow without burning out.</p></div></div>
-            <div class="ep__meta"><span class="tag">Career Conversations</span><span class="ep__time">[00:00]</span></div>
-            <button class="circle-btn" type="button" aria-label="Play episode"><span class="play-icon"></span></button>
-          </li>
-          <li class="ep" data-category="courtroom">
-            <span class="ep__num">EP [00]</span>
-            <div class="ep__body"><div><h3>[Tech Courtroom case title]</h3><p>[One-line summary of the case and verdict.]</p></div></div>
-            <div class="ep__meta"><span class="tag">Tech Courtroom</span><span class="ep__time">[00:00]</span></div>
-            <button class="circle-btn" type="button" aria-label="Play episode"><span class="play-icon"></span></button>
-          </li>
-          <li class="ep" data-category="guest">
-            <span class="ep__num">EP [00]</span>
-            <div class="ep__body"><div><h3>[Episode title]</h3><p>[One-line episode summary.]</p></div></div>
-            <div class="ep__meta"><span class="tag">Guest Stories</span><span class="ep__time">[00:00]</span></div>
-            <button class="circle-btn" type="button" aria-label="Play episode"><span class="play-icon"></span></button>
-          </li>
-          <li class="ep" data-category="career">
-            <span class="ep__num">EP [00]</span>
-            <div class="ep__body"><div><h3>[Episode title]</h3><p>[One-line episode summary.]</p></div></div>
-            <div class="ep__meta"><span class="tag">Career Conversations</span><span class="ep__time">[00:00]</span></div>
-            <button class="circle-btn" type="button" aria-label="Play episode"><span class="play-icon"></span></button>
-          </li>
-          <li class="ep" data-category="courtroom">
-            <span class="ep__num">EP [00]</span>
-            <div class="ep__body"><div><h3>[Tech Courtroom case title]</h3><p>[One-line summary of the case and verdict.]</p></div></div>
-            <div class="ep__meta"><span class="tag">Tech Courtroom</span><span class="ep__time">[00:00]</span></div>
-            <button class="circle-btn" type="button" aria-label="Play episode"><span class="play-icon"></span></button>
-          </li>
+        <ul class="ep-list" data-ep-list>
+          <!-- @episodes -->
         </ul>
-        <a href="#" class="arrow-link">View all episodes on YouTube</a>
+        <p class="ep-empty" data-ep-empty hidden>No episodes in this category yet.</p>
+
+        <div class="ep-more">
+          <button class="btn btn--outline" type="button" aria-expanded="false" data-ep-more>Show all {{episodeCount}} episodes</button>
+          <a href="https://www.youtube.com/@techwithiroh/videos" class="arrow-link arrow-link--flush" target="_blank" rel="noopener">More on YouTube</a>
+        </div>
       </div>
     </section>
 
-    <!-- LIVE -->
-    <section class="section live" id="live">
+    <!-- CLIPS: short-form, TikTok first -->
+    <section class="section section--bordered clips" id="clips">
       <div class="container">
-        <div class="live__head">
+        <div class="section-head">
           <div>
-            <span class="label">02 — The first-ever live edition</span>
-            <h2>Live in<br />Lagos.</h2>
+            <span class="label">02 — Clips</span>
+            <h2 class="h2">No time for a full episode?<br />Start in 60 seconds.</h2>
           </div>
-          <p>After years as a virtual show, Tech with Iroh takes the stage. One day of live recordings, an audience jury and the people shaping tech in Africa, in one room.</p>
-        </div>
-
-        <div class="video">
-          <div>
-            <button class="video__play" type="button" aria-label="Play trailer"><span class="play-icon"></span></button>
-            <small>[LIVE SHOW TRAILER VIDEO]</small>
+          <div class="btn-row">
+            <a href="https://www.tiktok.com/@techwithiroh" class="btn btn--accent" target="_blank" rel="noopener">Follow @techwithiroh on TikTok</a>
           </div>
         </div>
 
-        <div class="info-grid">
-          <div class="info"><small>Date</small><b><time datetime="2027-04-24">Sat, 24 April 2027</time></b></div>
-          <div class="info"><small>Venue</small><b>[Venue], Lagos</b></div>
-          <div class="info info--dark"><small>Tickets from</small><b>[₦PRICE]</b><a href="#" class="btn btn--accent">Reserve your seat</a></div>
-        </div>
-
-        <ul class="features">
-          <li class="feature"><small>01</small><h3>Live recordings</h3><p>Episodes recorded in front of a real audience.</p></li>
-          <li class="feature"><small>02</small><h3>Tech Courtroom, live</h3><p>The audience becomes the jury.</p></li>
-          <li class="feature"><small>03</small><h3>Networking</h3><p>Meet founders, engineers, recruiters and listeners.</p></li>
-          <li class="feature"><small>04</small><h3>[Speakers TBA]</h3><p>Guest lineup announced soon.</p></li>
+        <ul class="clip-rail" aria-label="Short clips">
+          <!-- @clips -->
         </ul>
-      </div>
-    </section>
 
-    <!-- CTRL + BUILD -->
-    <section class="section ctrl" id="ctrl">
-      <div class="container">
-        <div class="ctrl__hero">
-          <div>
-            <span class="badge"><span class="badge__dot"></span>Upcoming show · Coming soon</span>
-            <h2 class="ctrl__title">CTRL <span>+</span> BUILD</h2>
-            <p>A technical engineering show where experienced engineers design and architect real systems, in real time. Built to make senior-level engineering thinking accessible to junior developers.</p>
-            <div class="btn-row">
-              <a href="#newsletter" class="btn btn--accent">Notify me at launch</a>
-              <a href="mailto:techwithiroh@gmail.com?subject=CTRL%20%2B%20BUILD%20engineer%20application" class="btn btn--outline">Apply as an engineer</a>
-            </div>
+        <div class="tiktok" data-tiktok>
+          <div class="tiktok__copy">
+            <span class="label">Most active on TikTok</span>
+            <h3>Hot takes, career advice and behind-the-scenes, daily.</h3>
+            <p>Clips from every episode, This or That with guests, and moments you won't hear on the full show.</p>
+            <a href="https://www.tiktok.com/@techwithiroh" class="arrow-link arrow-link--flush" target="_blank" rel="noopener">tiktok.com/@techwithiroh</a>
           </div>
-          <div class="keys" aria-hidden="true">
-            <div class="key key--dark">ctrl</div><span class="keys__plus">+</span><div class="key key--red">build</div>
+          <div class="tiktok__embed" data-tiktok-embed>
+            <!-- TikTok's creator embed loads only when this scrolls into view, to save data. -->
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@techwithiroh" data-unique-id="techwithiroh" data-embed-type="creator">
+              <section><a target="_blank" rel="noopener" href="https://www.tiktok.com/@techwithiroh">@techwithiroh on TikTok</a></section>
+            </blockquote>
           </div>
-        </div>
-
-        <div class="team">
-          <span class="label">The team · Every episode</span>
-          <ul class="team__grid">
-            <li class="team-card"><small>Engineer 01</small><h3>Senior Engineer</h3><p>Senior, Staff or Engineering Manager level. Leads the architecture.</p></li>
-            <li class="team-card"><small>Engineer 02</small><h3>Senior Engineer</h3><p>Senior, Staff or Engineering Manager level. Challenges and refines decisions.</p></li>
-            <li class="team-card team-card--junior"><small>Engineer 03</small><h3>Junior Engineer</h3><p>Participates actively, asks the questions, and learns how seniors reason in real time.</p></li>
-          </ul>
-        </div>
-
-        <div class="flow">
-          <div>
-            <span class="label">Episode flow</span>
-            <h3>From problem to production-ready architecture.</h3>
-            <p>Together the team designs a real product or system, explains their tools, reviews trade-offs and walks through the decision frameworks behind every choice.</p>
-          </div>
-          <ol>
-            <li><span>01</span>Problem introduction</li>
-            <li><span>02</span>System architecture planning</li>
-            <li><span>03</span>Technology and tool selection</li>
-            <li><span>04</span>Infrastructure considerations</li>
-            <li><span>05</span>Scaling strategies</li>
-            <li><span>06</span>Trade-offs and alternatives</li>
-            <li><span>07</span>Final architecture walkthrough</li>
-          </ol>
-        </div>
-
-        <div class="why">
-          <div class="why__head">
-            <div>
-              <span class="label">Why this matters</span>
-              <h3>Syntax is taught everywhere.<br />Engineering thinking isn't.</h3>
-            </div>
-            <p>CTRL + BUILD bridges the gap with transparent, educational engineering conversations.</p>
-          </div>
-          <ul class="why__grid">
-            <li><small>01</small><h4>Real architecture discussions</h4></li>
-            <li><small>02</small><h4>Engineering trade-offs</h4></li>
-            <li><small>03</small><h4>Production system thinking</h4></li>
-            <li><small>04</small><h4>How seniors reason about scale</h4></li>
-          </ul>
         </div>
       </div>
     </section>
@@ -238,9 +117,9 @@
         <span class="label">03 — Segments</span>
         <h2 class="h2">More than an interview.</h2>
         <ul class="seg-list">
-          <li class="seg"><span>01</span><h3>Tech Courtroom</h3><p>Hot tech debates put on trial: opening arguments, evidence and a verdict.</p></li>
+          <li class="seg"><span>01</span><h3>Tech Courtroom</h3><p>Hot tech debates put on trial: opening arguments, evidence and a verdict. First case: QA vs Dev.</p></li>
           <li class="seg"><span>02</span><h3>Career Conversations</h3><p>How guests broke in, grew and stayed relevant — the honest version.</p></li>
-          <li class="seg"><span>03</span><h3>Ask Iroh</h3><p>Your career questions, answered rapid-fire. Breaking in, switching roles, interviews, offers and growth. Send yours to <a href="mailto:techwithiroh@gmail.com">techwithiroh@gmail.com</a> or DM <a href="#">@techwithiroh</a>.</p></li>
+          <li class="seg"><span>03</span><h3>Ask Iroh</h3><p>Your career questions, answered rapid-fire. Breaking in, switching roles, interviews, offers and growth. Send yours to <a href="mailto:techwithiroh@gmail.com">techwithiroh@gmail.com</a> or DM <a href="https://www.instagram.com/techwithiroh/" target="_blank" rel="noopener">@techwithiroh</a>.</p></li>
         </ul>
       </div>
     </section>
@@ -248,7 +127,7 @@
     <!-- HOST -->
     <section class="section section--bordered host" id="host">
       <div class="container host__grid">
-        <div class="host__portrait">[Portrait of Iroh]</div>
+        <div class="host__portrait avatar avatar--large" aria-hidden="true">IO</div>
         <div>
           <span class="label">04 — Your host</span>
           <h2>Iroh Nkechi Omolola</h2>
@@ -256,31 +135,34 @@
           <div class="tags">
             <span class="tag">Frontend Engineer</span><span class="tag">Tech Mentor</span><span class="tag">Technovation Judge</span><span class="tag">Speaker</span><span class="tag">Event Host</span>
           </div>
-          <a href="#" class="arrow-link arrow-link--flush">Follow @techwithiroh</a>
+          <a href="https://www.linkedin.com/in/iroh/" class="arrow-link arrow-link--flush" target="_blank" rel="noopener">Connect on LinkedIn</a>
         </div>
       </div>
     </section>
 
-    <!-- SPONSORS -->
-    <section class="section sponsors" id="sponsors">
+    <!-- WHAT'S NEXT: teasers for the pages that now live on their own -->
+    <section class="section section--bordered next" aria-labelledby="next-title">
       <div class="container">
-        <div class="section-head section-head--spaced">
-          <div>
-            <span class="label">05 — Sponsors</span>
-            <h2 class="h2">Backed by brands who<br />build talent.</h2>
-          </div>
-          <a href="mailto:techwithiroh@gmail.com?subject=Sponsor%20deck%20request" class="btn btn--light">Request the sponsor deck</a>
+        <span class="label">05 — What's next</span>
+        <h2 class="h2" id="next-title">Off the mic.</h2>
+        <div class="next__grid">
+          <a href="/live" class="next-card next-card--live">
+            <span class="badge"><span class="badge__dot"></span>Sat, 24 April 2027</span>
+            <h3>Live in<br />Lagos.</h3>
+            <p>The first live edition: recordings in front of an audience, Tech Courtroom with you as the jury, and a room full of people shaping tech in Africa.</p>
+            <span class="next-card__cta">Get tickets →</span>
+          </a>
+          <a href="/ctrl-build" class="next-card next-card--ctrl">
+            <span class="badge"><span class="badge__dot"></span>Coming soon</span>
+            <h3 class="mono">CTRL <span>+</span> BUILD</h3>
+            <p>Senior engineers design real systems in real time, with a junior engineer asking the questions you'd ask.</p>
+            <span class="next-card__cta">See the format →</span>
+          </a>
         </div>
-
-        <ul class="logos">
-          <li>[Headline sponsor]</li><li>[Sponsor logo]</li><li>[Sponsor logo]</li><li>[Sponsor logo]</li><li>[Sponsor logo]</li>
-        </ul>
-
-        <div class="tiers">
-          <div class="tier"><small>Community</small><b>[₦PRICE]</b><ul><li>Logo on website and socials</li><li>Tickets for your team</li></ul></div>
-          <div class="tier tier--featured"><div class="tier__top"><small>Headline</small><span class="tier__spot">1 spot</span></div><b>[₦PRICE]</b><ul><li>Naming rights for the live show</li><li>Stage branding and speaking slot</li><li>Logo on every episode</li></ul></div>
-          <div class="tier"><small>Gold</small><b>[₦PRICE]</b><ul><li>Logo at venue and online</li><li>Episode shout-outs</li><li>Exhibition table</li></ul></div>
-        </div>
+        <a href="/sponsors" class="sponsor-strip">
+          <span><b>Backed by brands who build talent.</b> Sponsor the live show or the podcast.</span>
+          <span class="next-card__cta">Sponsorship →</span>
+        </a>
       </div>
     </section>
 
@@ -293,65 +175,29 @@
         </div>
         <div class="faq__list">
           <div class="faq__item">
-            <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-1" data-faq-toggle>When and where is the live show?<i aria-hidden="true">+</i></button></h3>
-            <div class="faq__a" id="faq-1"><div><p>Saturday, 24 April 2027 at [Venue], Lagos. Full schedule coming soon.</p></div></div>
+            <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-1" data-faq-toggle>Where can I watch or listen?<i aria-hidden="true">+</i></button></h3>
+            <div class="faq__a" id="faq-1"><div><p>Right here on this page, or on YouTube, Spotify and Apple Podcasts. Short clips go up on TikTok and Instagram at @techwithiroh.</p></div></div>
           </div>
           <div class="faq__item">
-            <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-2" data-faq-toggle>How do I get tickets?<i aria-hidden="true">+</i></button></h3>
-            <div class="faq__a" id="faq-2"><div><p>Click "Reserve your seat" in the Live Show section. Subscribers get early ticket access.</p></div></div>
+            <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-2" data-faq-toggle>When and where is the live show?<i aria-hidden="true">+</i></button></h3>
+            <div class="faq__a" id="faq-2"><div><p>Saturday, 24 April 2027 in Lagos. See the <a href="/live">live show page</a> for the venue and tickets.</p></div></div>
           </div>
           <div class="faq__item">
-            <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-3" data-faq-toggle>How can my company sponsor?<i aria-hidden="true">+</i></button></h3>
-            <div class="faq__a" id="faq-3"><div><p>Request the sponsor deck or email techwithiroh@gmail.com to discuss Community, Gold or Headline packages.</p></div></div>
+            <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-3" data-faq-toggle>Can I be a guest on the podcast?<i aria-hidden="true">+</i></button></h3>
+            <div class="faq__a" id="faq-3"><div><p>Yes. Email <a href="mailto:techwithiroh@gmail.com?subject=Guest%20application">techwithiroh@gmail.com</a> with your story and what you'd like to talk about.</p></div></div>
           </div>
           <div class="faq__item">
-            <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-4" data-faq-toggle>Can I be a guest on the podcast?<i aria-hidden="true">+</i></button></h3>
-            <div class="faq__a" id="faq-4"><div><p>Yes. Apply via the guest link below or email techwithiroh@gmail.com with your story.</p></div></div>
+            <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-4" data-faq-toggle>How can my company sponsor?<i aria-hidden="true">+</i></button></h3>
+            <div class="faq__a" id="faq-4"><div><p>See the <a href="/sponsors">sponsorship page</a> for packages, or request the sponsor deck.</p></div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- NEWSLETTER -->
-    <section id="newsletter" aria-label="Newsletter">
-      <div class="container">
-        <div class="news">
-          <div>
-            <h2>Never miss an episode.</h2>
-            <p>New episodes, live show news and early ticket access.</p>
-          </div>
-          <form novalidate data-newsletter>
-            <label for="email">Email address</label>
-            <input id="email" name="email" type="email" placeholder="you@email.com" autocomplete="email" required />
-            <button type="submit" class="btn btn--dark">Subscribe</button>
-            <p class="news__status" role="status" data-newsletter-status></p>
-            <a href="mailto:techwithiroh@gmail.com?subject=Guest%20application" class="news__guest">Want to be a guest? Apply here →</a>
-          </form>
-        </div>
-      </div>
-    </section>
+    <!-- @include newsletter -->
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <div>
-          <a href="#" class="logo">
-            <img src="/logo.svg" alt="" width="22" height="28" />
-            Tech with Iroh
-          </a>
-          <p>Honest conversations about tech, careers and growth.</p>
-        </div>
-        <nav class="footer__cols" aria-label="Footer">
-          <div><h3>Show</h3><a href="#episodes">Episodes</a><a href="#live">Live Show</a><a href="#segments">Segments</a></div>
-          <div><h3>Work with us</h3><a href="#sponsors">Sponsor</a><a href="mailto:techwithiroh@gmail.com?subject=Guest%20application">Be a guest</a><a href="mailto:techwithiroh@gmail.com">techwithiroh@gmail.com</a></div>
-          <div><h3>Follow</h3><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">Spotify</a><a href="#">LinkedIn</a></div>
-        </nav>
-      </div>
-      <div class="footer__giant" aria-hidden="true">TECH WITH<br />IROH</div>
-      <div class="footer__bottom"><span>© <span data-year>2026</span> Tech with Iroh. All rights reserved.</span><span>Made in Lagos</span></div>
-    </div>
-  </footer>
+  <!-- @include footer -->
+  <!-- @include player -->
 </body>
 </html>
