@@ -23,3 +23,31 @@
 @media (max-width: 720px) {
   .next__grid { grid-template-columns: 1fr; }
 }
+
+/* Live card mic: brand mark with pulsing "on air" waves */
+.next-card--live { position: relative; overflow: hidden; }
+.next-card--live > :not(.next-card__mic) { position: relative; z-index: 1; }
+.next-card__mic {
+  position: absolute;
+  top: clamp(20px, 3vw, 32px);
+  right: clamp(8px, 2vw, 24px);
+  width: clamp(120px, 16vw, 190px);
+  color: var(--accent);
+  pointer-events: none;
+}
+.mic-body { transform-origin: 100px 152px; transition: transform .4s cubic-bezier(.3, 1.4, .5, 1); }
+.next-card--live:hover .mic-body { transform: rotate(-6deg); }
+.mic-wave { opacity: .25; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .mic-wave { animation: mic-wave 2.4s ease-in-out infinite; }
+  .mic-wave--2 { animation-delay: .4s; }
+}
+@keyframes mic-wave {
+  0%, 100% { opacity: .12; }
+  40% { opacity: .7; }
+}
+
+@media (max-width: 420px) {
+  .next-card__mic { width: 104px; }
+}
