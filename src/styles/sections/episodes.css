@@ -35,3 +35,11 @@
   .filters { flex-wrap: nowrap; overflow-x: auto; margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter); scrollbar-width: none; }
   .filters::-webkit-scrollbar { display: none; }
 }
+
+.tag--video { border-color: var(--accent); color: var(--accent); }
+.ep.is-playing h3, .ep:has(.is-playing) h3 { color: var(--accent); }
+.circle-btn.is-playing { background: var(--accent); color: var(--ink); border-color: var(--accent); }
+
+.ep-empty { padding: 28px 0; color: var(--muted); font-size: 14px; }
+.ep-more { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 32px; }
+.ep-more .btn[hidden] { display: none; }
