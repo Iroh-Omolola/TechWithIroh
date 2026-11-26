@@ -1,0 +1,24 @@
+  <!-- Persistent mini-player: keeps playing while visitors scroll the page -->
+  <div class="mini" data-mini hidden>
+    <div class="container mini__inner">
+      <div class="mini__media" data-mini-media></div>
+      <div class="mini__info">
+        <span class="mini__kind"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span data-mini-kind>Now playing</span></span>
+        <b class="mini__title" data-mini-title></b>
+        <div class="mini__progress" data-mini-audio-ui>
+          <span data-mini-current>0:00</span>
+          <input type="range" min="0" max="0" value="0" step="1" aria-label="Seek" data-mini-seek />
+          <span data-mini-duration>0:00</span>
+        </div>
+      </div>
+      <div class="mini__actions">
+        <button class="mini__btn" type="button" aria-label="Back 15 seconds" data-mini-skip="-15" data-mini-audio-ui>−15</button>
+        <button class="mini__toggle" type="button" aria-label="Pause" data-mini-toggle data-mini-audio-ui><span class="play-icon"></span></button>
+        <button class="mini__btn" type="button" aria-label="Forward 30 seconds" data-mini-skip="30" data-mini-audio-ui>+30</button>
+        <a class="mini__btn mini__open" data-mini-link target="_blank" rel="noopener" aria-label="Open on platform">↗</a>
+        <button class="mini__btn" type="button" aria-label="Close player" data-mini-close>✕</button>
+      </div>
+    </div>
+    <audio preload="none" data-mini-audio></audio>
+  </div>
+  <!-- @player-data -->

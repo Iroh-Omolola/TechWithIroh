@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Landing page for Tech with Iroh — tech, unfiltered.",
+  "description": "Landing page for Tech with Iroh \u2014 tech, unfiltered.",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "node scripts/fetch-content.mjs && vite",
+    "build": "node scripts/fetch-content.mjs && vite build",
+    "build:offline": "vite build",
+    "content": "node scripts/fetch-content.mjs",
     "preview": "vite preview",
     "format": "prettier --write ."
   },

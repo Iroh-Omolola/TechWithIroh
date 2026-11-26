@@ -9,10 +9,13 @@
 @import "./components/logo.css";
 @import "./components/nav.css";
 @import "./components/footer.css";
+@import "./components/mini-player.css";
+@import "./components/motion.css";
 
 @import "./sections/hero.css";
-@import "./sections/stats.css";
 @import "./sections/episodes.css";
+@import "./sections/clips.css";
+@import "./sections/next.css";
 @import "./sections/live.css";
 @import "./sections/ctrl.css";
 @import "./sections/segments.css";

@@ -55,3 +55,8 @@
   .nav__links .btn { margin-top: 24px; padding: 14px; font-size: 15px; }
   .nav.is-open .nav__links { transform: none; visibility: visible; transition: transform .3s ease; }
 }
+
+.nav__links a[aria-current="page"] { color: var(--text); }
+@media (min-width: 961px) {
+  .nav__links a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 6px; text-decoration-thickness: 2px; }
+}
