@@ -35,8 +35,13 @@
   color: var(--accent);
   pointer-events: none;
 }
-.mic-body { transform-origin: 100px 152px; transition: transform .4s cubic-bezier(.3, 1.4, .5, 1); }
-.next-card--live:hover .mic-body { transform: rotate(-6deg); }
+.mic-body {
+  transform-origin: 100px 152px;
+  transform: rotate(var(--mic-tilt, 0deg));
+  /* Springy return when the mouse leaves; a quick follow while tracking (below). */
+  transition: transform .6s cubic-bezier(.3, 1.6, .5, 1);
+}
+.next-card--live.is-tracking .mic-body { transition: transform .25s ease-out; }
 .mic-wave { opacity: .25; }
 
 @media (prefers-reduced-motion: no-preference) {

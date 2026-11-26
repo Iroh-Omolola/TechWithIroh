@@ -30,6 +30,40 @@ export function initMotion() {
   if (reducedMotion() || !('IntersectionObserver' in window)) return;
   initReveals();
   initCountUps();
+  initMicTilt();
+}
+
+/**
+ * Live card mic leans toward the mouse: the further the cursor is to one side
+ * of the mic, the more it tips that way. Springs back upright on leave.
+ */
+const MAX_TILT_DEG = 14;
+
+function initMicTilt() {
+  const card = document.querySelector('.next-card--live');
+  const mic = card?.querySelector('.next-card__mic');
+  if (!mic) return;
+
+  let frame = null;
+  card.addEventListener('pointermove', (e) => {
+    if (e.pointerType !== 'mouse' || frame) return;
+    frame = requestAnimationFrame(() => {
+      frame = null;
+      const m = mic.getBoundingClientRect();
+      const c = card.getBoundingClientRect();
+      // -1 (far left of the card) … 0 (over the mic) … 1 (far right)
+      const reach = e.clientX < m.left + m.width / 2 ? m.left + m.width / 2 - c.left : c.right - (m.left + m.width / 2);
+      const dx = Math.max(-1, Math.min(1, (e.clientX - (m.left + m.width / 2)) / reach));
+      card.style.setProperty('--mic-tilt', `${(dx * MAX_TILT_DEG).toFixed(2)}deg`);
+      card.classList.add('is-tracking');
+    });
+  });
+  card.addEventListener('pointerleave', () => {
+    if (frame) cancelAnimationFrame(frame);
+    frame = null;
+    card.classList.remove('is-tracking');
+    card.style.setProperty('--mic-tilt', '0deg');
+  });
 }
 
 function initReveals() {
