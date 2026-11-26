@@ -22,3 +22,17 @@
   .logos li:first-child { grid-column: 1 / -1; border-top: 0; }
   .logos li:nth-child(odd):not(:first-child) { border-left: 1px solid var(--line); }
 }
+
+/* Sponsors page: audience facts */
+.reach { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 40px; }
+.reach div { padding: 22px; border-left: 1px solid var(--line); display: flex; flex-direction: column-reverse; justify-content: flex-end; }
+.reach div:first-child { border-left: 0; }
+.reach dt { font-size: 13px; color: var(--muted); }
+.reach dd { font-size: clamp(26px, 3.4vw, 32px); font-weight: 700; letter-spacing: -.04em; }
+.reach dd.reach__small { font-size: 15px; letter-spacing: -.01em; line-height: 1.4; padding-top: 8px; margin-bottom: 6px; }
+
+@media (max-width: 720px) {
+  .reach { grid-template-columns: repeat(2, 1fr); }
+  .reach div:nth-child(3) { border-left: 0; }
+  .reach div:nth-child(n + 3) { border-top: 1px solid var(--line); }
+}

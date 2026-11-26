@@ -5,6 +5,13 @@ export function initNav() {
   const links = document.querySelector('[data-nav-links]');
   if (!nav || !toggle || !links) return;
 
+  // Mark the link for the current page (nav is a shared partial across pages).
+  const path = location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+  links.querySelectorAll('a:not(.btn)').forEach((a) => {
+    const url = new URL(a.href);
+    if (!url.hash && url.pathname.replace(/\.html$/, '') === path) a.setAttribute('aria-current', 'page');
+  });
+
   const setOpen = (open) => {
     nav.classList.toggle('is-open', open);
     toggle.setAttribute('aria-expanded', String(open));
