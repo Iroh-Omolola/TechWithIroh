@@ -11,41 +11,47 @@
   <!-- @include nav -->
 
   <main id="main">
-    <!-- HERO: the host and the latest episode, front and centre -->
+    <!-- HERO: Iroh's voice on the left, a wall of real episodes on the right -->
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__intro">
-          <a href="/live" class="badge badge--link"><span class="badge__dot"></span>Live in Lagos · 24.04.2027 →</a>
-          <h1>Tech,<em>unfiltered.</em></h1>
+          <a href="/live" class="hero__next">Next up: we're going live in Lagos, Sat 24 April 2027</a>
 
-          <div class="host-chip">
-            <span class="avatar" aria-hidden="true">IO</span>
-            <p>
-              <b>Hosted by Iroh Nkechi Omolola</b>
-              <span>Frontend engineer and mentor. Real people, real stories, one episode at a time.</span>
-            </p>
+          <h1>Tech, <span class="scribble">unfiltered.<svg viewBox="0 0 320 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15c48-8 104-11 160-9 46 2 92 5 150-4" /><path pathLength="1" d="M22 20c62-5 128-6 210-3" /></svg></span></h1>
+
+          <!-- Draft copy written from facts on the site: Iroh should rewrite this in her own words. -->
+          <div class="hero__letter">
+            <p>Hi, I'm Iroh. I'm a frontend engineer, and over the years I've mentored <b>500+ people</b> into tech and helped <b>70+</b> of them land job offers.</p>
+            <p>This show is where I ask the questions they were too polite to ask: what it really costs, who gets hired, and how people actually grow.</p>
+            <span class="hero__sign" aria-hidden="true">— Iroh</span>
           </div>
 
-          <ul class="hero__proof" aria-label="Iroh's track record">
-            <li><b data-count>500+</b>people mentored</li>
-            <li><b data-count>70+</b>connected to job offers</li>
-            <li><b data-count>{{episodeCount}}</b>episodes since 2023</li>
-          </ul>
+          <div class="hero__actions">
+            <button class="btn btn--accent" type="button" data-play="{{latestId}}"><span class="play-icon"></span>Play the newest episode</button>
+            <a href="https://www.tiktok.com/@techwithiroh" class="hero__link" target="_blank" rel="noopener">or catch the clips on TikTok</a>
+          </div>
 
-          <div class="btn-row">
-            <a href="#episodes" class="btn btn--accent"><span class="play-icon"></span>Start listening</a>
-            <a href="https://www.tiktok.com/@techwithiroh" class="btn btn--outline" target="_blank" rel="noopener">Follow on TikTok</a>
-          </div>
-          <div class="hero__platforms">
-            Also on
-            <a href="https://www.youtube.com/@techwithiroh" target="_blank" rel="noopener">YouTube</a>
-            <a href="https://www.instagram.com/techwithiroh/" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://creators.spotify.com/pod/profile/tech-with-iroh/" target="_blank" rel="noopener">Spotify</a>
-            <a href="https://podcasts.apple.com/us/podcast/tech-with-iroh/id1701067007" target="_blank" rel="noopener">Apple Podcasts</a>
-          </div>
+          <p class="hero__platforms">
+            We're <b>@techwithiroh</b> on
+            <a href="https://www.tiktok.com/@techwithiroh" target="_blank" rel="noopener">TikTok</a>,
+            <a href="https://www.youtube.com/@techwithiroh" target="_blank" rel="noopener">YouTube</a>,
+            <a href="https://www.instagram.com/techwithiroh/" target="_blank" rel="noopener">Instagram</a>,
+            <a href="https://creators.spotify.com/pod/profile/tech-with-iroh/" target="_blank" rel="noopener">Spotify</a> and
+            <a href="https://podcasts.apple.com/us/podcast/tech-with-iroh/id1701067007" target="_blank" rel="noopener">Apple Podcasts</a>.
+          </p>
         </div>
 
-        <!-- @latest -->
+        <div class="wall">
+          <!-- @wall -->
+          <a class="wall__note" href="#clips">
+            <q>You fit SABI make you no still SABI</q>
+            <span>from a recent clip →</span>
+          </a>
+          <span class="wall__scrawl" aria-hidden="true">
+            new episode!
+            <svg viewBox="0 0 90 70"><path pathLength="1" d="M8 6c20 4 46 16 58 38M66 44l-14-2M66 44l3-14" /></svg>
+          </span>
+        </div>
       </div>
     </section>
 

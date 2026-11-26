@@ -1,23 +1,43 @@
 /* Motion layer. Everything here is skipped for prefers-reduced-motion
  * (see base/reset.css and scripts/modules/motion.js). */
 
-/* 1. Hero entrance: pure CSS, runs on load with a short stagger */
+/* 1. Hero entrance: text rises in, prints get "pinned" to the wall, then the
+ *    hand-drawn bits draw themselves. Pure CSS, runs once on load. */
 @keyframes rise {
   from { opacity: 0; transform: translateY(18px); }
   to { opacity: 1; transform: none; }
 }
+@keyframes pin {
+  from { opacity: 0; transform: translateY(-18px) rotate(calc(var(--r) + 7deg)) scale(1.04); }
+  to { opacity: 1; transform: rotate(var(--r)); }
+}
+@keyframes stick {
+  from { opacity: 0; transform: rotate(12deg) scale(.85); }
+  to { opacity: 1; transform: rotate(3.5deg); }
+}
+@keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes appear { from { opacity: 0; } to { opacity: 1; } }
+
 @media (prefers-reduced-motion: no-preference) {
-  .hero__intro > *,
-  .hero .latest {
-    animation: rise .7s cubic-bezier(.2, .7, .2, 1) both;
-  }
+  .hero__intro > * { animation: rise .7s cubic-bezier(.2, .7, .2, 1) both; }
   .hero__intro > :nth-child(1) { animation-delay: .05s; }
   .hero__intro > :nth-child(2) { animation-delay: .12s; }
-  .hero__intro > :nth-child(3) { animation-delay: .22s; }
-  .hero__intro > :nth-child(4) { animation-delay: .3s; }
-  .hero__intro > :nth-child(5) { animation-delay: .38s; }
-  .hero__intro > :nth-child(6) { animation-delay: .44s; }
-  .hero .latest { animation-delay: .3s; animation-duration: .9s; }
+  .hero__intro > :nth-child(3) { animation-delay: .24s; }
+  .hero__intro > :nth-child(4) { animation-delay: .34s; }
+  .hero__intro > :nth-child(5) { animation-delay: .42s; }
+
+  .scribble path { stroke-dasharray: 1; animation: draw .7s .75s ease-out both; }
+  .scribble path + path { animation-delay: 1s; animation-duration: .5s; }
+
+  .wall .print { animation: pin .6s cubic-bezier(.2, .9, .3, 1.15) both; }
+  .wall .print--high { animation-delay: .25s; }
+  .wall .print--low { animation-delay: .38s; }
+  .wall .print--main { animation-delay: .5s; }
+  /* Hover transform must win once the entrance is done */
+  .wall .print:hover, .wall__note:hover { animation: none; }
+  .wall__note { animation: stick .5s 1.05s cubic-bezier(.2, .9, .3, 1.3) both; }
+  .wall__scrawl { animation: appear .3s 1.3s both; }
+  .wall__scrawl path { stroke-dasharray: 1; animation: draw .6s 1.4s ease-out both; }
 }
 
 /* 2. Scroll reveals: the .reveal class is only added by JS */

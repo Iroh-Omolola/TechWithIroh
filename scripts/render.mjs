@@ -5,11 +5,12 @@
  *
  * Markers:
  *   <!-- @include name -->   → src/partials/name.html
- *   <!-- @latest -->         → hero "latest episode" card
+ *   <!-- @wall -->           → hero wall of pinned episode prints
  *   <!-- @episodes -->       → full episode list
  *   <!-- @clips -->          → short-form clip rail
  *   <!-- @player-data -->    → JSON the mini-player reads
  *   {{episodeCount}}         → total number of episodes
+ *   {{latestId}}             → id of the newest episode (for play buttons)
  */
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -59,26 +60,22 @@ function renderEpisode(ep, index) {
           </li>`;
 }
 
-function renderLatest(ep) {
-  if (!ep) return '';
-  const isVideo = ep.source === 'youtube';
-  const img = ep.thumbLarge || ep.thumb;
-  return `
-        <article class="latest">
-          <button class="latest__media" type="button" data-play="${ep.id}" aria-label="Play latest episode: ${esc(ep.title)}">
-            <img src="${img}" alt="" width="1280" height="720" fetchpriority="high" />
-            <span class="latest__play"><span class="play-icon"></span></span>
-          </button>
-          <div class="latest__body">
-            <span class="label">Latest episode · ${fmtDate(ep.date)}</span>
-            <h2>${esc(ep.title)}</h2>
-            ${ep.summary ? `<p>${esc(ep.summary)}</p>` : ''}
-            <div class="latest__actions">
-              <button class="btn btn--light" type="button" data-play="${ep.id}"><span class="play-icon"></span>${isVideo ? 'Watch here' : 'Listen here'}</button>
-              <a class="arrow-link arrow-link--flush" href="${esc(ep.url)}" target="_blank" rel="noopener">${isVideo ? 'Open on YouTube' : 'Open on Spotify'}</a>
-            </div>
-          </div>
-        </article>`;
+/**
+ * Hero "wall": real episode thumbnails pinned up like prints. The newest episode
+ * is the big one; the two most recent other video episodes sit behind it.
+ */
+function renderWall(episodes) {
+  const [latest] = episodes;
+  if (!latest) return '';
+  const others = episodes.filter((e) => e !== latest && e.source === 'youtube').slice(0, 2);
+  const print = (ep, variant, big) => `
+            <button class="print print--${variant}" type="button" data-play="${ep.id}" aria-label="Play${big ? ' latest episode' : ''}: ${esc(ep.title)}">
+              <span class="print__tape" aria-hidden="true"></span>
+              <img src="${big ? ep.thumbLarge || ep.thumb : ep.thumb}" alt="" width="${big ? 1280 : 480}" height="${big ? 720 : 360}"${big ? ' fetchpriority="high"' : ' loading="lazy"'} />
+              ${big ? '<span class="print__play" aria-hidden="true"><span class="play-icon"></span></span>' : ''}
+              <span class="print__caption">${esc(ep.title)}</span>
+            </button>`;
+  return [print(latest, 'main', true), ...others.map((ep, i) => print(ep, i ? 'low' : 'high', false))].join('');
 }
 
 function renderClip(clip) {
@@ -128,12 +125,13 @@ export function render(html) {
 
   const extra = Math.max(0, episodes.length - EPISODES_SHOWN);
   return html
-    .replace('<!-- @latest -->', () => renderLatest(episodes[0]))
+    .replace('<!-- @wall -->', () => renderWall(episodes))
     .replace('<!-- @episodes -->', () => episodes.map(renderEpisode).join(''))
     .replace('<!-- @clips -->', () => clips.map(renderClip).join(''))
     .replace('<!-- @player-data -->', () => renderPlayerData(episodes))
     .replaceAll('{{episodeCount}}', String(episodes.length))
-    .replaceAll('{{extraCount}}', String(extra));
+    .replaceAll('{{extraCount}}', String(extra))
+    .replaceAll('{{latestId}}', episodes[0]?.id ?? '');
 }
 
 export function contentPlugin() {

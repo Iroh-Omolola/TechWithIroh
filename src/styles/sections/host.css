@@ -11,3 +11,25 @@
   .host__grid { grid-template-columns: 1fr; }
   .host__portrait { max-width: 260px; }
 }
+
+/* Avatar: shows initials until a photo is added at public/images/iroh.jpg. */
+.avatar {
+  position: relative;
+  flex-shrink: 0;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--card);
+  border: 2px solid var(--accent);
+  font-family: var(--mono);
+  font-weight: 500;
+  color: var(--muted);
+}
+.avatar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/images/iroh.jpg") center 20% / cover no-repeat;
+}
