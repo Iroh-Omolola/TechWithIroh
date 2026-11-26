@@ -8,8 +8,7 @@
 const REVEAL_GROUPS = [
   '.section-head, .segments > .container > .h2, .next > .container > .h2, .live__head, .ctrl__hero',
   '.ep-list > .ep',
-  // The rail as one block: individual clips sit off-screen sideways and would never trigger.
-  '.clip-rail',
+  '.clip-grid > .clip',
   '.tiktok',
   '.seg-list > .seg',
   '.host__grid > *',

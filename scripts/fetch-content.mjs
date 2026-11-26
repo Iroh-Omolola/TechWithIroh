@@ -103,6 +103,15 @@ async function fetchYouTube() {
       });
     }
   }
+  // Shorts usually have a true vertical thumbnail; record it where it exists
+  // (used for the big featured tile, where the cropped landscape one looks blurry).
+  await Promise.all(
+    clips.map(async (clip) => {
+      const url = `https://i.ytimg.com/vi/${clip.id}/oardefault.jpg`;
+      const head = await fetch(url, { method: 'HEAD' }).catch(() => null);
+      if (head?.ok) clip.thumbTall = url;
+    }),
+  );
   return { episodes, clips };
 }
 

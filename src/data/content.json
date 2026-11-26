@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T07:58:52.143Z",
+  "updatedAt": "2026-11-26T09:07:44.310Z",
   "episodes": [
     {
       "id": "yt-E6Bn2ZwHQQc",
@@ -476,28 +476,32 @@
       "id": "ZnL0UeH10fY",
       "title": "",
       "date": "2026-10-29",
-      "views": 38
+      "views": 38,
+      "thumbTall": "https://i.ytimg.com/vi/ZnL0UeH10fY/oardefault.jpg"
     },
     {
       "platform": "youtube",
       "id": "wYuS7I58Y6k",
       "title": "",
       "date": "2026-10-13",
-      "views": 38
+      "views": 38,
+      "thumbTall": "https://i.ytimg.com/vi/wYuS7I58Y6k/oardefault.jpg"
     },
     {
       "platform": "youtube",
       "id": "WHugSXYO2jE",
       "title": "",
       "date": "2026-10-07",
-      "views": 23
+      "views": 23,
+      "thumbTall": "https://i.ytimg.com/vi/WHugSXYO2jE/oardefault.jpg"
     },
     {
       "platform": "youtube",
       "id": "U2NFgbKoMfs",
       "title": "Benin republic hangout with techies.",
       "date": "2026-08-05",
-      "views": 39
+      "views": 39,
+      "thumbTall": "https://i.ytimg.com/vi/U2NFgbKoMfs/oardefault.jpg"
     },
     {
       "platform": "youtube",
@@ -511,49 +515,56 @@
       "id": "7mFT-a-p5nI",
       "title": "",
       "date": "2026-06-27",
-      "views": 328
+      "views": 328,
+      "thumbTall": "https://i.ytimg.com/vi/7mFT-a-p5nI/oardefault.jpg"
     },
     {
       "platform": "youtube",
       "id": "nD0LbzTTadM",
       "title": "Your listening ears are enough! I was the person for the room",
       "date": "2026-03-17",
-      "views": 64
+      "views": 64,
+      "thumbTall": "https://i.ytimg.com/vi/nD0LbzTTadM/oardefault.jpg"
     },
     {
       "platform": "youtube",
       "id": "W9tdFm9izI4",
       "title": "Your listening ears are enough for the room",
       "date": "2026-03-10",
-      "views": 36
+      "views": 36,
+      "thumbTall": "https://i.ytimg.com/vi/W9tdFm9izI4/oardefault.jpg"
     },
     {
       "platform": "youtube",
       "id": "9iSrAz9txlg",
       "title": "You fit SABI make you no still SABI ⚠️",
       "date": "2026-01-21",
-      "views": 66
+      "views": 66,
+      "thumbTall": "https://i.ytimg.com/vi/9iSrAz9txlg/oardefault.jpg"
     },
     {
       "platform": "youtube",
       "id": "GW3JaWhJTCM",
       "title": "For you. Beware ⚠️ ‼️",
       "date": "2026-01-20",
-      "views": 260
+      "views": 260,
+      "thumbTall": "https://i.ytimg.com/vi/GW3JaWhJTCM/oardefault.jpg"
     },
     {
       "platform": "youtube",
       "id": "N5aq2jf33oo",
       "title": "Click the subscribe button",
       "date": "2026-01-19",
-      "views": 257
+      "views": 257,
+      "thumbTall": "https://i.ytimg.com/vi/N5aq2jf33oo/oardefault.jpg"
     },
     {
       "platform": "youtube",
       "id": "Wg2gZQBcHok",
       "title": "",
       "date": "2026-01-17",
-      "views": 750
+      "views": 750,
+      "thumbTall": "https://i.ytimg.com/vi/Wg2gZQBcHok/oardefault.jpg"
     }
   ]
 }
