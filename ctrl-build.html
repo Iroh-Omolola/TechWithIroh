@@ -11,64 +11,221 @@
   <!-- @include nav -->
 
   <main id="main">
-    <section class="section ctrl ctrl--page">
+    <!-- HERO: blueprint paper, a terminal prompt and two pressable keycaps -->
+    <section class="cb-hero">
+      <div class="container cb-hero__grid">
+        <div class="cb-hero__copy">
+          <p class="cb-prompt"><span class="cb-prompt__path">~/shows $</span> ./ctrl-build --status<br /><b>&gt; coming soon</b><span class="caret" aria-hidden="true"></span></p>
+          <h1 class="cb-title">CTRL <span>+</span> BUILD</h1>
+          <p class="cb-lead">A technical engineering show where experienced engineers design and architect real systems, in real time. Built to make senior-level engineering thinking accessible to junior developers.</p>
+          <div class="cb-actions">
+            <a href="#notify" class="btn btn--accent">Notify me at launch</a>
+            <a href="#apply" class="cb-link">or apply as an engineer ↓</a>
+          </div>
+        </div>
+
+        <div class="cb-keys">
+          <div class="cb-keys__row">
+            <button class="keycap keycap--ctrl" type="button" data-build-key aria-label="Press to build">ctrl</button>
+            <span class="cb-keys__plus" aria-hidden="true">+</span>
+            <button class="keycap keycap--b" type="button" data-build-key aria-label="Press to build">build</button>
+          </div>
+          <p class="cb-keys__hint" aria-hidden="true">psst… press <kbd>Ctrl</kbd> + <kbd>B</kbd></p>
+          <output class="cb-log" data-build-log aria-live="polite"></output>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHITEBOARD: what an episode produces, drawn in marker -->
+    <section class="section board-section">
       <div class="container">
-        <div class="ctrl__hero">
+        <div class="section-head">
           <div>
-            <span class="badge"><span class="badge__dot"></span>Upcoming show · Coming soon</span>
-            <h1 class="ctrl__title">CTRL <span>+</span> BUILD</h1>
-            <p>A technical engineering show where experienced engineers design and architect real systems, in real time. Built to make senior-level engineering thinking accessible to junior developers.</p>
-            <div class="btn-row">
-              <a href="#newsletter" class="btn btn--accent">Notify me at launch</a>
-              <a href="mailto:techwithiroh@gmail.com?subject=CTRL%20%2B%20BUILD%20engineer%20application" class="btn btn--outline">Apply as an engineer</a>
+            <span class="label">What an episode looks like</span>
+            <h2 class="h2">A blank board.<br />A real system.</h2>
+          </div>
+          <p class="board-section__note">Every episode starts empty and ends with an architecture you could actually ship. Here's the kind of thing that ends up on the board.</p>
+        </div>
+
+        <div class="board" data-board>
+          <svg class="board__svg" viewBox="0 0 920 470" role="img" aria-label="Hand-drawn system diagram: users, a load balancer, an API, auth and feed services, a database and a cache.">
+            <defs>
+              <filter id="marker-wobble"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="4" /><feDisplacementMap in="SourceGraphic" scale="3.2" /></filter>
+            </defs>
+            <g filter="url(#marker-wobble)">
+              <!-- users -->
+              <g class="ink" style="--d:0">
+                <path pathLength="1" d="M70 181a14 14 0 1 0 .1 0" />
+                <path pathLength="1" d="M70 209v41M50 225h40M70 250l-15 30M70 250l15 30" />
+              </g>
+              <!-- boxes -->
+              <path class="ink" style="--d:1" pathLength="1" d="M170 200h150v70h-150Z" />
+              <path class="ink" style="--d:2" pathLength="1" d="M380 200h130v70h-130Z" />
+              <path class="ink" style="--d:3" pathLength="1" d="M580 80h160v64h-160Z" />
+              <path class="ink" style="--d:3.4" pathLength="1" d="M580 326h160v64h-160Z" />
+              <g class="ink" style="--d:4.2">
+                <path pathLength="1" d="M788 175a52 14 0 1 0 104 0a52 14 0 1 0-104 0" />
+                <path pathLength="1" d="M788 175v80a52 14 0 0 0 104 0v-80" />
+              </g>
+              <path class="ink" style="--d:4.6" pathLength="1" d="M790 330h110v54h-110Z" />
+              <!-- arrows -->
+              <g class="blue" style="--d:1.5"><path pathLength="1" d="M100 230L165 233" /><path pathLength="1" d="M155 225l11 8-12 7" /></g>
+              <g class="blue" style="--d:2.5"><path pathLength="1" d="M322 235h53" /><path pathLength="1" d="M365 228l11 7-11 7" /></g>
+              <g class="blue" style="--d:3.2"><path pathLength="1" d="M480 198c40-48 60-78 95-85" /><path pathLength="1" d="M563 106l13 7-11 9" /></g>
+              <g class="blue" style="--d:3.6"><path pathLength="1" d="M480 272c40 48 60 78 95 85" /><path pathLength="1" d="M563 348l13 9-13 7" /></g>
+              <g class="blue" style="--d:4.4"><path pathLength="1" d="M742 112c38 8 58 28 73 46" /><path pathLength="1" d="M804 154l12 6-2-14" /></g>
+              <g class="blue" style="--d:4.6"><path pathLength="1" d="M742 345c38-25 63-45 76-77" /><path pathLength="1" d="M808 274l11-8 3 14" /></g>
+              <g class="blue" style="--d:4.9"><path pathLength="1" d="M742 365l43-5" /><path pathLength="1" d="M775 353l11 7-11 7" /></g>
+              <!-- red marker: the junior's question -->
+              <path class="red" style="--d:5.6" pathLength="1" d="M560 360c0-42 200-48 202-4 2 44-187 52-196 16" />
+            </g>
+            <!-- labels -->
+            <g class="board__labels">
+              <text x="70" y="312" style="--d:.6">users</text>
+              <text x="245" y="243" style="--d:1.4">load balancer</text>
+              <text x="445" y="243" style="--d:2.4">API</text>
+              <text x="660" y="120" style="--d:3.4">auth service</text>
+              <text x="660" y="366" style="--d:3.8">feed service</text>
+              <text x="840" y="230" style="--d:4.6">DB</text>
+              <text x="845" y="365" style="--d:5">cache</text>
+              <text class="red-text" x="610" y="440" style="--d:6">bottleneck?</text>
+            </g>
+          </svg>
+
+          <span class="board__sticky board__sticky--yellow" style="--d:6.4">what breaks at 10x traffic?</span>
+          <span class="board__sticky board__sticky--pink" style="--d:6.8">cache: worth the extra complexity?</span>
+          <span class="board__credit">ep. 01 · redrawn live, every time</span>
+
+          <div class="board__tray" aria-hidden="true"><i class="m-ink"></i><i class="m-blue"></i><i class="m-red"></i><i class="eraser"></i></div>
+        </div>
+        <p class="board__swipe" aria-hidden="true">swipe the board to see the whole system →</p>
+      </div>
+    </section>
+
+    <!-- TEAM: lanyard badges -->
+    <section class="section section--bordered crew">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="label">The team · every episode</span>
+            <h2 class="h2">Three people,<br />one whiteboard.</h2>
+          </div>
+        </div>
+        <ul class="lanyards">
+          <li class="lanyard" style="--r:-3deg">
+            <span class="lanyard__strap" aria-hidden="true"></span>
+            <div class="lanyard__card">
+              <span class="lanyard__clip" aria-hidden="true"></span>
+              <small>Engineer 01</small>
+              <span class="lanyard__photo" aria-hidden="true"></span>
+              <h3>Senior Engineer</h3>
+              <span class="lanyard__level">Senior · Staff · EM</span>
+              <p>Leads the architecture.</p>
+              <span class="lanyard__access">Access: whiteboard</span>
             </div>
-          </div>
-          <div class="keys" aria-hidden="true">
-            <div class="key key--dark">ctrl</div><span class="keys__plus">+</span><div class="key key--red">build</div>
-          </div>
-        </div>
+          </li>
+          <li class="lanyard" style="--r:2deg">
+            <span class="lanyard__strap" aria-hidden="true"></span>
+            <div class="lanyard__card">
+              <span class="lanyard__clip" aria-hidden="true"></span>
+              <small>Engineer 02</small>
+              <span class="lanyard__photo" aria-hidden="true"></span>
+              <h3>Senior Engineer</h3>
+              <span class="lanyard__level">Senior · Staff · EM</span>
+              <p>Challenges and refines every decision.</p>
+              <span class="lanyard__access">Access: red marker</span>
+            </div>
+          </li>
+          <li class="lanyard lanyard--junior" style="--r:-1.5deg">
+            <span class="lanyard__strap" aria-hidden="true"></span>
+            <div class="lanyard__card">
+              <span class="lanyard__clip" aria-hidden="true"></span>
+              <small>Engineer 03</small>
+              <span class="lanyard__photo" aria-hidden="true"></span>
+              <h3>Junior Engineer</h3>
+              <span class="lanyard__level">Early career</span>
+              <p>Asks the questions, and learns how seniors reason in real time.</p>
+              <span class="lanyard__access">Access: all the questions</span>
+            </div>
+            <span class="lanyard__bubble" aria-hidden="true">wait… why not just one big database?</span>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-        <div class="team">
-          <span class="label">The team · Every episode</span>
-          <ul class="team__grid">
-            <li class="team-card"><small>Engineer 01</small><h3>Senior Engineer</h3><p>Senior, Staff or Engineering Manager level. Leads the architecture.</p></li>
-            <li class="team-card"><small>Engineer 02</small><h3>Senior Engineer</h3><p>Senior, Staff or Engineering Manager level. Challenges and refines decisions.</p></li>
-            <li class="team-card team-card--junior"><small>Engineer 03</small><h3>Junior Engineer</h3><p>Participates actively, asks the questions, and learns how seniors reason in real time.</p></li>
-          </ul>
+    <!-- FLOW: the episode as a terminal run -->
+    <section class="section section--bordered flow-section">
+      <div class="container flow-section__grid">
+        <div>
+          <span class="label">Episode flow</span>
+          <h2 class="h2">From problem to<br />production-ready.</h2>
+          <p class="flow-section__note">Together the team designs a real product or system, explains their tools, reviews trade-offs and walks through the decision frameworks behind every choice.</p>
         </div>
-
-        <div class="flow">
-          <div>
-            <span class="label">Episode flow</span>
-            <h3>From problem to production-ready architecture.</h3>
-            <p>Together the team designs a real product or system, explains their tools, reviews trade-offs and walks through the decision frameworks behind every choice.</p>
-          </div>
-          <ol>
-            <li><span>01</span>Problem introduction</li>
-            <li><span>02</span>System architecture planning</li>
-            <li><span>03</span>Technology and tool selection</li>
-            <li><span>04</span>Infrastructure considerations</li>
-            <li><span>05</span>Scaling strategies</li>
-            <li><span>06</span>Trade-offs and alternatives</li>
-            <li><span>07</span>Final architecture walkthrough</li>
+        <div class="term" data-term>
+          <div class="term__bar" aria-hidden="true"><i></i><i></i><i></i><span>episode-flow.sh</span></div>
+          <ol class="term__body">
+            <li class="term__cmd" style="--i:0"><span class="term__prompt">$</span> ./ctrl-build --episode next</li>
+            <li style="--i:1"><span>[1/7]</span> problem introduction<b>ok</b></li>
+            <li style="--i:2"><span>[2/7]</span> system architecture planning<b>ok</b></li>
+            <li style="--i:3"><span>[3/7]</span> technology and tool selection<b>ok</b></li>
+            <li style="--i:4"><span>[4/7]</span> infrastructure considerations<b>ok</b></li>
+            <li style="--i:5"><span>[5/7]</span> scaling strategies<b>ok</b></li>
+            <li style="--i:6"><span>[6/7]</span> trade-offs and alternatives<b class="warn">heated</b></li>
+            <li style="--i:7"><span>[7/7]</span> final architecture walkthrough<b>ok</b></li>
+            <li class="term__done" style="--i:8">✓ shipped: one production-ready architecture</li>
+            <li class="term__cmd" style="--i:9"><span class="term__prompt">$</span> <span class="caret" aria-hidden="true"></span></li>
           </ol>
         </div>
+      </div>
+    </section>
 
-        <div class="why">
-          <div class="why__head">
-            <div>
-              <span class="label">Why this matters</span>
-              <h3>Syntax is taught everywhere.<br />Engineering thinking isn't.</h3>
-            </div>
-            <p>CTRL + BUILD bridges the gap with transparent, educational engineering conversations.</p>
+    <!-- WHY: the manifesto -->
+    <section class="section section--bordered manifesto">
+      <div class="container">
+        <span class="label">Why this matters</span>
+        <p class="manifesto__line">
+          <span class="struck">Syntax<svg viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 26C40 14 80 30 120 16s60 6 76-6" /><path pathLength="1" d="M10 12c50 10 110 2 182 18" /></svg></span> is taught everywhere.<br />
+          Engineering <span class="ringed">thinking<svg viewBox="0 0 300 110" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M30 64C16 30 80 8 160 8s132 22 130 52-70 46-150 44S16 86 40 40" /></svg></span> isn't.
+        </p>
+        <p class="manifesto__sub">CTRL + BUILD bridges the gap with transparent, educational engineering conversations.</p>
+        <ul class="checks">
+          <li>Real architecture discussions</li>
+          <li>Engineering trade-offs</li>
+          <li>Production system thinking</li>
+          <li>How seniors reason about scale</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- APPLY + NOTIFY -->
+    <section class="section section--bordered join" id="apply">
+      <div class="container join__grid">
+        <article class="pr">
+          <header class="pr__head">
+            <span class="pr__state">● Open</span>
+            <h2>Add yourself to CTRL + BUILD <span>#1</span></h2>
+            <p><b>you</b> wants to merge into <code>ctrl-build:main</code></p>
+          </header>
+          <div class="pr__body">
+            <p><b>Senior, Staff or EM?</b> Lead the architecture, or challenge it.<br /><b>Early in your career?</b> Be the one asking the questions everyone's thinking.</p>
+            <ul class="pr__checks">
+              <li>I can explain my trade-offs out loud</li>
+              <li>I'm okay being wrong on camera</li>
+              <li>I like a whiteboard more than a slide deck</li>
+            </ul>
           </div>
-          <ul class="why__grid">
-            <li><small>01</small><h4>Real architecture discussions</h4></li>
-            <li><small>02</small><h4>Engineering trade-offs</h4></li>
-            <li><small>03</small><h4>Production system thinking</h4></li>
-            <li><small>04</small><h4>How seniors reason about scale</h4></li>
-          </ul>
-        </div>
+          <footer class="pr__foot">
+            <a href="mailto:techwithiroh@gmail.com?subject=CTRL%20%2B%20BUILD%20engineer%20application" class="btn btn--accent">Open a pull request ↗</a>
+            <span>Opens an email to techwithiroh@gmail.com</span>
+          </footer>
+        </article>
+
+        <a href="#newsletter" class="notify" id="notify">
+          <span class="keycap keycap--small" aria-hidden="true">↵</span>
+          <b>Notify me<br />at launch.</b>
+          <span class="notify__sub">One email when the first episode drops. That's it.</span>
+          <span class="notify__cta">Hit enter →</span>
+        </a>
       </div>
     </section>
 

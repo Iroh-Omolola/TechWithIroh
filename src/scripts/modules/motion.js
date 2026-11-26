@@ -6,7 +6,7 @@
  * unless this script runs, so the page still works without JavaScript.
  */
 const REVEAL_GROUPS = [
-  '.section-head, .segments > .container > .h2, .next > .container > .h2, .stage .h2, .room .h2, .ctrl__hero',
+  '.section-head, .segments > .container > .h2, .next > .container > .h2, .stage .h2, .room .h2',
   '.ep-list > .ep',
   '.clip-grid > .clip',
   '.tiktok',
@@ -18,7 +18,9 @@ const REVEAL_GROUPS = [
   '.ticket-wrap, .screen, .setlist, .case',
   '.lineup__grid > .mystery',
   '.stickers > li',
-  '.team__grid > .team-card, .flow, .why',
+  '.lanyards > .lanyard',
+  '.manifesto',
+  '.pr, .notify',
   '.reach, .logos, .tiers > .tier',
 ];
 const STAGGER_MS = 70;
