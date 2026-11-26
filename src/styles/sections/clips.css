@@ -1,0 +1,41 @@
+/* Short-form clip rail: vertical 9:16 cards that scroll sideways */
+.clip-rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: clamp(160px, 22vw, 210px);
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 12px;
+  margin: 0 calc(var(--gutter) * -1);
+  padding-inline: var(--gutter);
+  scroll-padding-inline: var(--gutter);
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-2) transparent;
+}
+.clip { position: relative; aspect-ratio: 9 / 16; border-radius: var(--radius-sm); overflow: hidden; background: var(--card); scroll-snap-align: start; }
+.clip__btn { position: absolute; inset: 0; width: 100%; text-align: left; }
+.clip__btn img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.clip__btn:hover img { transform: scale(1.04); }
+.clip__btn::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, transparent 30%, transparent 55%, rgba(0,0,0,.85) 100%); }
+.clip--tiktok .clip__btn { background: linear-gradient(160deg, #25f4ee22, #fe2c5533), var(--card); }
+
+.clip__platform { position: absolute; top: 10px; left: 10px; z-index: 1; padding: 3px 8px; border-radius: var(--radius-pill); background: rgba(8, 8, 10, .7); font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+.clip--tiktok .clip__platform { background: var(--accent); color: var(--ink); }
+.clip__play { position: absolute; top: 50%; left: 50%; z-index: 1; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; background: rgba(243, 241, 236, .92); color: var(--ink); display: grid; place-items: center; padding-left: 3px; opacity: .9; transition: transform .2s, opacity .2s; }
+.clip__btn:hover .clip__play { transform: scale(1.08); opacity: 1; }
+.clip__title { position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 1; font-size: 14px; font-weight: 600; letter-spacing: -.02em; line-height: 1.25; }
+
+.clip iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; z-index: 2; background: #000; }
+
+/* TikTok block */
+.tiktok { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; align-items: center; margin-top: 48px; padding: clamp(24px, 4vw, 40px); border: 1px solid var(--line-2); border-radius: var(--radius); background: radial-gradient(120% 120% at 0% 0%, #25f4ee14, transparent 50%), radial-gradient(120% 120% at 100% 100%, #fe2c551f, transparent 50%), var(--card-2); }
+.tiktok h3 { font-size: clamp(24px, 3.2vw, 32px); font-weight: 700; letter-spacing: -.045em; line-height: 1.08; margin: 10px 0 12px; }
+.tiktok p { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+.tiktok__embed { min-height: 200px; display: grid; align-items: center; }
+.tiktok__embed .tiktok-embed { margin: 0 !important; }
+.tiktok__embed blockquote section a { color: var(--accent); font-weight: 600; }
+
+@media (max-width: 960px) {
+  .tiktok { grid-template-columns: 1fr; gap: 24px; }
+}
