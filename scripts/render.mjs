@@ -11,6 +11,7 @@
  *   <!-- @player-data -->    → JSON the mini-player reads
  *   {{episodeCount}}         → total number of episodes
  *   {{latestId}}             → id of the newest episode (for play buttons)
+ *   {{courtroomId}}          → id of the first Tech Courtroom episode
  */
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -193,7 +194,8 @@ export function render(html) {
     .replace('<!-- @player-data -->', () => renderPlayerData(episodes))
     .replaceAll('{{episodeCount}}', String(episodes.length))
     .replaceAll('{{extraCount}}', String(extra))
-    .replaceAll('{{latestId}}', episodes[0]?.id ?? '');
+    .replaceAll('{{latestId}}', episodes[0]?.id ?? '')
+    .replaceAll('{{courtroomId}}', episodes.find((e) => /courtroom/i.test(e.title))?.id ?? '');
 }
 
 export function contentPlugin() {

@@ -6,7 +6,7 @@
  * unless this script runs, so the page still works without JavaScript.
  */
 const REVEAL_GROUPS = [
-  '.section-head, .segments > .container > .h2, .next > .container > .h2, .live__head, .ctrl__hero',
+  '.section-head, .segments > .container > .h2, .next > .container > .h2, .stage .h2, .room .h2, .ctrl__hero',
   '.ep-list > .ep',
   '.clip-grid > .clip',
   '.tiktok',
@@ -15,8 +15,9 @@ const REVEAL_GROUPS = [
   '.next__grid > *, .sponsor-strip',
   '.faq__item',
   '.news',
-  '.video, .info-grid',
-  '.features > .feature',
+  '.ticket-wrap, .screen, .setlist, .case',
+  '.lineup__grid > .mystery',
+  '.stickers > li',
   '.team__grid > .team-card, .flow, .why',
   '.reach, .logos, .tiers > .tier',
 ];

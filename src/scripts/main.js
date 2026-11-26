@@ -7,6 +7,7 @@ import { initEpisodeFilters } from './modules/episodeFilters.js';
 import { initFaq } from './modules/faq.js';
 import { initNewsletter } from './modules/newsletter.js';
 import { initMotion } from './modules/motion.js';
+import { initLive } from './modules/live.js';
 
 initNav();
 initPlayer();
@@ -15,6 +16,7 @@ initEpisodeFilters();
 initFaq();
 initNewsletter();
 initMotion();
+initLive();
 
 const year = document.querySelector('[data-year]');
 if (year) year.textContent = new Date().getFullYear();
