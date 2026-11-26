@@ -19,9 +19,13 @@ const REVEAL_GROUPS = [
   '.lineup__grid > .mystery',
   '.stickers > li',
   '.lanyards > .lanyard',
+  '.receipt, .mock',
+  '.touch > li',
+  '.tags > .tag-item',
+  '.wall-slots > li',
+  '.letter',
   '.manifesto',
   '.pr, .notify',
-  '.reach, .logos, .tiers > .tier',
 ];
 const STAGGER_MS = 70;
 const MAX_STAGGER = 6;

@@ -11,32 +11,156 @@
   <!-- @include nav -->
 
   <main id="main">
-    <section class="section sponsors sponsors--page">
-      <div class="container">
-        <div class="section-head section-head--spaced">
-          <div>
-            <span class="label">Sponsorship</span>
-            <h1 class="h2">Backed by brands who<br />build talent.</h1>
+    <!-- HERO: picture your logo on a real episode -->
+    <section class="sp-hero">
+      <div class="container sp-hero__grid">
+        <div>
+          <span class="label">Sponsorship</span>
+          <h1>Put your brand where tech careers get <span class="sp-underline">made.<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15c48-8 104-11 160-9 46 2 92 5 132-4" /></svg></span></h1>
+          <p class="sp-lead">Tech with Iroh connects people breaking into tech with the people who've done it. Sponsor the podcast, the clips and the first live show in Lagos.</p>
+          <div class="sp-actions">
+            <a href="mailto:techwithiroh@gmail.com?subject=Sponsor%20deck%20request" class="btn btn--accent">Request the sponsor deck</a>
+            <a href="mailto:techwithiroh@gmail.com" class="sp-link">or email techwithiroh@gmail.com</a>
           </div>
-          <a href="mailto:techwithiroh@gmail.com?subject=Sponsor%20deck%20request" class="btn btn--light">Request the sponsor deck</a>
         </div>
 
-        <dl class="reach" aria-label="Audience and reach">
-          <div><dt>Episodes since 2023</dt><dd data-count>{{episodeCount}}</dd></div>
-          <div><dt>People mentored by Iroh</dt><dd data-count>500+</dd></div>
-          <div><dt>Connected to job offers</dt><dd data-count>70+</dd></div>
-          <div><dt>Platforms</dt><dd class="reach__small">TikTok · YouTube · Instagram · Spotify · Apple</dd></div>
-        </dl>
+        <figure class="mock">
+          <div class="mock__print">
+            <span class="mock__tape" aria-hidden="true"></span>
+            <img src="{{latestThumb}}" alt="Thumbnail of the latest Tech with Iroh episode" width="1280" height="720" />
+            <span class="mock__slot">Your<br />logo<br />here</span>
+          </div>
+          <figcaption class="mock__note">this corner's<br />got your name on it</figcaption>
+        </figure>
+      </div>
+    </section>
 
-        <ul class="logos">
-          <li>[Headline sponsor]</li><li>[Sponsor logo]</li><li>[Sponsor logo]</li><li>[Sponsor logo]</li><li>[Sponsor logo]</li>
+    <!-- THE RECEIPTS -->
+    <section class="section receipts">
+      <div class="container receipts__grid">
+        <div>
+          <span class="label">The audience</span>
+          <h2 class="h2">The receipts.</h2>
+          <p class="receipts__note">Real numbers, printed plainly. No vanity metrics, no inflated reach. Just a community that's actually building careers.</p>
+        </div>
+        <div class="receipt">
+          <p class="receipt__shop">Tech with Iroh<br /><span>media kit · est. 2023</span></p>
+          <dl class="receipt__lines">
+            <div><dt>Episodes published</dt><dd data-count>{{episodeCount}}</dd></div>
+            <div><dt>People mentored by Iroh</dt><dd data-count>500+</dd></div>
+            <div><dt>Connected to job offers</dt><dd data-count>70+</dd></div>
+            <div><dt>Platforms</dt><dd data-count>5</dd></div>
+            <div><dt>Live shows (Lagos)</dt><dd>1</dd></div>
+          </dl>
+          <p class="receipt__total"><span>Total</span><b>An audience building real careers</b></p>
+          <p class="receipt__platforms">TikTok · YouTube · Instagram · Spotify · Apple Podcasts</p>
+          <span class="receipt__barcode" aria-hidden="true"></span>
+          <p class="receipt__thanks">Thank you for backing tech talent</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHERE YOUR BRAND SHOWS UP -->
+    <section class="section section--bordered touch-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="label">Where you show up</span>
+            <h2 class="h2">Seen, heard and<br />in the room.</h2>
+          </div>
+        </div>
+        <ul class="touch">
+          <li>
+            <svg viewBox="0 0 160 100" aria-hidden="true"><rect x="8" y="10" width="144" height="80" rx="8" class="t-frame" /><path d="M70 38l22 12-22 12z" class="t-fill" /><rect x="110" y="66" width="34" height="16" rx="3" class="t-logo" /></svg>
+            <h3>On every episode</h3>
+            <p>Your logo on the episodes and shout-outs in the conversation.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 160 100" aria-hidden="true"><path d="M10 84h140" class="t-frame" /><rect x="34" y="14" width="92" height="26" rx="4" class="t-logo" /><circle cx="60" cy="66" r="7" class="t-fill" /><path d="M60 73v11M100 66v18M94 70h12" class="t-frame" /><circle cx="100" cy="60" r="6" class="t-frame" /></svg>
+            <h3>On stage in Lagos</h3>
+            <p>Naming rights, stage branding and a speaking slot at the live show.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 160 100" aria-hidden="true"><rect x="58" y="6" width="44" height="88" rx="8" class="t-frame" /><path d="M74 42l14 8-14 8z" class="t-fill" /><rect x="66" y="74" width="28" height="10" rx="2" class="t-logo" /></svg>
+            <h3>Across socials</h3>
+            <p>Your logo on the website and across the show's social channels.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 160 100" aria-hidden="true"><rect x="22" y="44" width="116" height="40" rx="4" class="t-frame" /><rect x="54" y="18" width="52" height="18" rx="3" class="t-logo" /><path d="M30 84v10M130 84v10" class="t-frame" /><circle cx="50" cy="62" r="5" class="t-fill" /><circle cx="80" cy="62" r="5" class="t-fill" /><circle cx="110" cy="62" r="5" class="t-fill" /></svg>
+            <h3>In the room</h3>
+            <p>An exhibition table and tickets for your team to meet the community.</p>
+          </li>
         </ul>
+      </div>
+    </section>
 
-        <div class="tiers">
-          <div class="tier"><small>Community</small><b>[₦PRICE]</b><ul><li>Logo on website and socials</li><li>Tickets for your team</li></ul></div>
-          <div class="tier tier--featured"><div class="tier__top"><small>Headline</small><span class="tier__spot">1 spot</span></div><b>[₦PRICE]</b><ul><li>Naming rights for the live show</li><li>Stage branding and speaking slot</li><li>Logo on every episode</li></ul></div>
-          <div class="tier"><small>Gold</small><b>[₦PRICE]</b><ul><li>Logo at venue and online</li><li>Episode shout-outs</li><li>Exhibition table</li></ul></div>
+    <!-- PACKAGES: hanging price tags -->
+    <section class="section section--bordered packages">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="label">Packages</span>
+            <h2 class="h2">Pick your tag.</h2>
+          </div>
+          <a href="mailto:techwithiroh@gmail.com?subject=Sponsor%20deck%20request" class="arrow-link arrow-link--flush">Full details in the sponsor deck</a>
         </div>
+        <div class="tag-rail" aria-hidden="true"></div>
+        <ul class="tags">
+          <li class="tag-item" style="--r:-4deg">
+            <div class="price-tag">
+            <span class="price-tag__name">Community</span>
+            <b class="price-tag__price">[₦PRICE]</b>
+            <ul><li>Logo on website and socials</li><li>Tickets for your team</li></ul></div>
+          </li>
+          <li class="tag-item" style="--r:2deg">
+            <div class="price-tag price-tag--headline">
+            <span class="price-tag__stamp">1 spot</span>
+            <span class="price-tag__name">Headline</span>
+            <b class="price-tag__price">[₦PRICE]</b>
+            <ul><li>Naming rights for the live show</li><li>Stage branding and speaking slot</li><li>Logo on every episode</li></ul></div>
+          </li>
+          <li class="tag-item" style="--r:5deg">
+            <div class="price-tag">
+            <span class="price-tag__name">Gold</span>
+            <b class="price-tag__price">[₦PRICE]</b>
+            <ul><li>Logo at venue and online</li><li>Episode shout-outs</li><li>Exhibition table</li></ul></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- THE WALL: empty slots, honestly -->
+    <section class="section section--bordered wall-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="label">The wall</span>
+            <h2 class="h2">Be the first<br />on the wall.</h2>
+          </div>
+        </div>
+        <ul class="wall-slots">
+          <li class="wall-slot wall-slot--headline">headline sponsor</li>
+          <li class="wall-slot">your logo?</li>
+          <li class="wall-slot">your logo?</li>
+          <li class="wall-slot">your logo?</li>
+          <li class="wall-slot">your logo?</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- LETTER from Iroh. Draft copy: Iroh should rewrite this in her own words. -->
+    <section class="section section--bordered letter-section">
+      <div class="container">
+        <article class="letter">
+          <p class="letter__to">Dear future partner,</p>
+          <p>Tech with Iroh started as a way to connect people breaking into tech with people who've already done it. Since 2023 that's meant {{episodeCount}} episodes, 500+ people mentored and 70+ of them connected to job offers.</p>
+          <p>On 24 April 2027 we take it to a stage in Lagos for the first time. If your brand believes in building tech talent, I'd love to build this with you.</p>
+          <p class="letter__sign">— Iroh</p>
+          <div class="letter__actions">
+            <a href="mailto:techwithiroh@gmail.com?subject=Sponsor%20deck%20request" class="btn btn--dark">Request the sponsor deck</a>
+            <a href="mailto:techwithiroh@gmail.com?subject=Sponsorship%20chat" class="letter__link">Or let's just talk →</a>
+          </div>
+        </article>
       </div>
     </section>
 

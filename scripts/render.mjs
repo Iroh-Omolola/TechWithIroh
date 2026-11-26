@@ -12,6 +12,7 @@
  *   {{episodeCount}}         → total number of episodes
  *   {{latestId}}             → id of the newest episode (for play buttons)
  *   {{courtroomId}}          → id of the first Tech Courtroom episode
+ *   {{latestThumb}}          → large thumbnail of the newest video episode
  */
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -187,6 +188,7 @@ export function render(html) {
   }
 
   const extra = Math.max(0, episodes.length - EPISODES_SHOWN);
+  const latestVideo = episodes.find((e) => e.source === 'youtube');
   return html
     .replace('<!-- @wall -->', () => renderWall(episodes))
     .replace('<!-- @episodes -->', () => episodes.map(renderEpisode).join(''))
@@ -195,6 +197,7 @@ export function render(html) {
     .replaceAll('{{episodeCount}}', String(episodes.length))
     .replaceAll('{{extraCount}}', String(extra))
     .replaceAll('{{latestId}}', episodes[0]?.id ?? '')
+    .replaceAll('{{latestThumb}}', latestVideo ? latestVideo.thumbLarge || latestVideo.thumb : '')
     .replaceAll('{{courtroomId}}', episodes.find((e) => /courtroom/i.test(e.title))?.id ?? '');
 }
 
