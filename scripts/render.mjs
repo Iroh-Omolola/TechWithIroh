@@ -52,7 +52,7 @@ function renderEpisode(ep, index) {
   const meta = [fmtDuration(ep.duration), fmtDate(ep.date)].filter(Boolean).join(' · ');
   return `
           <li class="ep" data-tags="${tagsFor(ep)}"${index >= EPISODES_SHOWN ? ' data-extra' : ''}>
-            <span class="ep__num">${num}</span>
+            <span class="ep__num"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span class="ep__label">${num}</span></span>
             <div class="ep__body"><div><h3>${esc(ep.title)}</h3>${ep.summary ? `<p>${esc(ep.summary)}</p>` : ''}</div></div>
             <div class="ep__meta"><span class="tag${isVideo ? ' tag--video' : ''}">${isVideo ? 'Watch' : 'Listen'}</span><span class="ep__time">${meta}</span></div>
             <button class="circle-btn" type="button" data-play="${ep.id}" aria-label="Play: ${esc(ep.title)}"><span class="play-icon"></span></button>

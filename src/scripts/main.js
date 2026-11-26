@@ -6,6 +6,7 @@ import { initClips } from './modules/clips.js';
 import { initEpisodeFilters } from './modules/episodeFilters.js';
 import { initFaq } from './modules/faq.js';
 import { initNewsletter } from './modules/newsletter.js';
+import { initMotion } from './modules/motion.js';
 
 initNav();
 initPlayer();
@@ -13,6 +14,7 @@ initClips();
 initEpisodeFilters();
 initFaq();
 initNewsletter();
+initMotion();
 
 const year = document.querySelector('[data-year]');
 if (year) year.textContent = new Date().getFullYear();

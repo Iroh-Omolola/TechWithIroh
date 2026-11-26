@@ -39,6 +39,7 @@ export function initPlayer() {
       btn.classList.toggle('is-playing', btn.dataset.play === currentId && playing);
     });
     toggle.classList.toggle('is-playing', !audio.paused);
+    mini.classList.toggle('is-active', playing);
     toggle.setAttribute('aria-label', audio.paused ? 'Play' : 'Pause');
   };
 

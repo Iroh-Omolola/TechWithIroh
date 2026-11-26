@@ -10,6 +10,7 @@
 @import "./components/nav.css";
 @import "./components/footer.css";
 @import "./components/mini-player.css";
+@import "./components/motion.css";
 
 @import "./sections/hero.css";
 @import "./sections/episodes.css";

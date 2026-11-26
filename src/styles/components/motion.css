@@ -1,0 +1,51 @@
+/* Motion layer. Everything here is skipped for prefers-reduced-motion
+ * (see base/reset.css and scripts/modules/motion.js). */
+
+/* 1. Hero entrance: pure CSS, runs on load with a short stagger */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero__intro > *,
+  .hero .latest {
+    animation: rise .7s cubic-bezier(.2, .7, .2, 1) both;
+  }
+  .hero__intro > :nth-child(1) { animation-delay: .05s; }
+  .hero__intro > :nth-child(2) { animation-delay: .12s; }
+  .hero__intro > :nth-child(3) { animation-delay: .22s; }
+  .hero__intro > :nth-child(4) { animation-delay: .3s; }
+  .hero__intro > :nth-child(5) { animation-delay: .38s; }
+  .hero__intro > :nth-child(6) { animation-delay: .44s; }
+  .hero .latest { animation-delay: .3s; animation-duration: .9s; }
+}
+
+/* 2. Scroll reveals: the .reveal class is only added by JS */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* 3. Count-ups: fixed-width digits so numbers don't jitter while counting */
+[data-count] { font-variant-numeric: tabular-nums; }
+
+/* 4. Equaliser: shown next to whatever is currently playing */
+.eq { display: none; align-items: flex-end; gap: 2px; height: 12px; }
+.eq i { width: 3px; height: 100%; border-radius: 1px; background: var(--accent); transform-origin: bottom; animation: eq 1s ease-in-out infinite; }
+.eq i:nth-child(2) { animation-delay: -.4s; animation-duration: .8s; }
+.eq i:nth-child(3) { animation-delay: -.7s; animation-duration: 1.15s; }
+@keyframes eq {
+  0%, 100% { transform: scaleY(.3); }
+  50% { transform: scaleY(1); }
+}
+
+/* Playing episode row: bars replace the episode number */
+.ep:has(.circle-btn.is-playing) .eq { display: inline-flex; }
+.ep:has(.circle-btn.is-playing) .ep__label { display: none; }
+
+/* Mini-player: bars beside "Listening" / "Watching" */
+.mini.is-active .mini__kind .eq { display: inline-flex; margin-right: 8px; height: 10px; }
+.mini__kind { display: inline-flex; align-items: center; }
